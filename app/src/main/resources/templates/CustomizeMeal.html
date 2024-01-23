@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Meal</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+
+</head>
+
+
+<body id="CustomizeMeal">
+    <div id="header">
+        <div class="line"></div>
+        <div id="title">
+            <h1>Order</h1>
+            <p th:text="'ID: '+${Order.getId()}"></p>
+        </div>
+        
+        <div class="line"></div>
+    </div>
+
+    <div class="line"></div>
+
+    <form action="/updatemeal" method="POST">
+        <input type="hidden" name="orderId" th:value="${Order.getId()}" />
+        <input type="hidden" name="mealId" th:value="${Meal.getId()}" />
+
+        <div id="extras">
+            <div id="pwithhighlight">
+                <p>Here are the available extra ingredients for</p>
+                <span id='highlight' th:text="${Meal.getMeal().getName()}"></span>
+            </div>
+            
+            <div id="extralist">
+                <label th:each="extra : ${Meal.getMeal().getAvailableExtras()}" class="checkboximagelabel" id="extra">
+                    <input type='checkbox' name="extras" th:value="${extra.getId()}" th:checked="${Meal.isExtraAdded(extra.getId())}">
+                    <span th:text="${extra.getName()}"></span>
+                    <div class="extraimage" th:style="'background-image: url(/images/extras/' + ${extra.imagepath} + ')'"></div>
+                    <span id="extraprice" th:text="${extra.getPrice()}+'$'"></span>
+                </label>
+            </div>
+        </div>
+
+        <button id='submitbutton' type="submit">Save</button>
+    </form>
+
+    <a id='returnbutton' th:href="@{'/order/'+${Order.getId()}+'/summary'}">
+        <button type="button">Return</button>
+    </a>
+
+
+</body>
+</html>

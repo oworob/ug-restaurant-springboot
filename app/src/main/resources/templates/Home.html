@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body id="Home">
+    <div id="header">
+        <div class="line"></div>
+        <h1>Welcome, guest!</h1>
+        <div class="line"></div>
+    </div>
+
+    <div id="neworder">
+        <p>Hungry?</p>
+        <a th:href="@{/neworder}">
+            <button id="neworderbutton">Start New Order</button>
+        </a>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="ad">
+        <p>Why don't you try one of these?</p>
+        <div id='meallist'>
+            <div id="meal" th:each="meal : ${RandomMeals}">
+                <div class="mealimage" th:style="'background-image: url(' + '/images/meals/' + ${meal.imagepath} + ')'" th:alt="${meal.id + '-image'}"></div>
+                <div id="mealdata">
+                    <p id="mealname" th:text="${meal.name}"></p>
+                    <p id="mealprice" th:text="${meal.price} + '$'"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{/login}" id="loginbutton">
+        <button >Log in as administrator</button>
+    </a>
+
+
+</body>
+</html>

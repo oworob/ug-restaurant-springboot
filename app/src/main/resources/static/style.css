@@ -1,0 +1,577 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: "Gill Sans MT";
+  background-color: rgb(55, 49, 47);
+  background: linear-gradient(-150deg, rgb(55, 49, 47), rgb(22, 20, 20));
+  background-attachment: fixed;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body h1, body h2, body h3, body h4 {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+body h1 {
+  font-size: 200%;
+}
+
+.line {
+  border-bottom: 2px solid rgb(167, 162, 96);
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  padding: 15px 45px;
+  letter-spacing: 1px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 100%;
+  outline: none;
+  border: none;
+  transition: 0.2s;
+  border-radius: 8px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: rgb(55, 49, 47);
+}
+button:hover {
+  background-color: rgb(167, 162, 96);
+  color: white;
+}
+
+input {
+  padding: 8px 16px;
+  outline: none;
+  border: 2px solid rgb(22, 20, 20);
+  background-color: white;
+  border-radius: 8px;
+  transition: 0.2s;
+  color: rgb(55, 49, 47);
+  font-family: inherit;
+  font-size: 100%;
+  letter-spacing: 1px;
+  text-align: center;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+input:focus {
+  border: 2px solid rgb(167, 162, 96);
+}
+
+#header {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  padding: 30px 0;
+  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .line {
+  width: 25%;
+  height: 0;
+}
+#header h1 {
+  margin: 0 5%;
+}
+#header #title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5%;
+}
+#header #title p {
+  font-size: 60%;
+  margin: 0;
+}
+
+.radiobuttonlabel {
+  display: inline-block;
+  padding: 15px 45px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  color: rgb(55, 49, 47);
+  border-radius: 5px;
+  transition: 0.2s;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.radiobuttonlabel input[type=radio] {
+  display: none;
+}
+.radiobuttonlabel:has(input[type=radio]:checked) {
+  background-color: rgb(167, 162, 96); /* Zmiana koloru tła, gdy zaznaczony */
+  color: white;
+}
+.radiobuttonlabel:hover {
+  background-color: rgb(167, 162, 96); /* Zmiana koloru tła, gdy zaznaczony */
+  color: white;
+}
+
+.radioimagelabel, .mealcategory > #meal, .checkboximagelabel {
+  text-transform: uppercase;
+  padding-top: 10px;
+  border: 2px solid rgb(22, 20, 20);
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  color: rgb(55, 49, 47);
+  border-radius: 5px;
+  transition: 0.2s;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.radioimagelabel .mealimage, .radioimagelabel .extraimage, .mealcategory > #meal .mealimage, .mealcategory > #meal .extraimage, .checkboximagelabel .mealimage, .checkboximagelabel .extraimage {
+  border-radius: 0 0 5px 5px;
+  margin-top: 10px;
+}
+.radioimagelabel input[type=radio], .radioimagelabel input[type=checkbox], .mealcategory > #meal input[type=radio], .mealcategory > #meal input[type=checkbox], .checkboximagelabel input[type=radio], .checkboximagelabel input[type=checkbox] {
+  display: none;
+}
+.radioimagelabel:has(input[type=radio]:checked), .radioimagelabel:has(input[type=checkbox]:checked), .mealcategory > #meal:has(input[type=radio]:checked), .mealcategory > #meal:has(input[type=checkbox]:checked), .checkboximagelabel:has(input[type=radio]:checked), .checkboximagelabel:has(input[type=checkbox]:checked) {
+  background-color: rgb(167, 162, 96);
+  color: white;
+}
+.radioimagelabel:hover, .mealcategory > #meal:hover, .checkboximagelabel:hover {
+  background-color: rgb(167, 162, 96);
+  color: white;
+}
+
+.mealimage, .extraimage {
+  height: 200px;
+  width: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+#Home #ad > p {
+  margin: 50px 0;
+}
+#Home #ad #meallist {
+  display: flex;
+  gap: 50px;
+}
+#Home #ad #meallist #meal {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  background-color: rgb(22, 20, 20);
+  border-radius: 27px;
+  border: solid 3px rgb(167, 162, 96);
+}
+#Home #ad #meallist #meal .mealimage {
+  border-radius: 25px 25px 0 0;
+  width: 350px;
+}
+#Home #ad #meallist #meal #mealdata {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#Home #ad #meallist #meal #mealdata p {
+  margin-block: 0;
+}
+#Home #ad #meallist #meal #mealdata p#mealprice {
+  font-size: 100%;
+}
+#Home p {
+  font-size: 130%;
+}
+#Home #neworder {
+  padding: 30px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+#Home #neworder #neworderbutton {
+  margin: 20px 0;
+  font-size: 140%;
+  padding: 20px 100px;
+}
+#Home #loginbutton {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+#Home #loginbutton button {
+  background-color: rgb(22, 20, 20);
+  color: rgb(55, 49, 47);
+}
+#Home #loginbutton button:hover {
+  background-color: rgb(167, 162, 96);
+  color: white;
+}
+#Home #header {
+  padding: 70px 0 0 0;
+}
+
+#Login form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 60px;
+  align-items: center;
+}
+#Login form #field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-transform: uppercase;
+  width: 200%;
+}
+#Login #returnbutton {
+  margin-top: 30px;
+}
+
+#AddMeal form {
+  width: 100%;
+}
+#AddMeal form p {
+  font-size: 130%;
+  margin: 50px 0;
+}
+#AddMeal form #pwithhighlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#AddMeal form #pwithhighlight #highlight {
+  text-transform: uppercase;
+  color: rgb(167, 162, 96);
+  font-size: 130%;
+}
+#AddMeal #categories #categorylist {
+  margin: 50px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#AddMeal .mealcategory {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+#AddMeal .mealcategory #meal {
+  padding-bottom: 10px;
+}
+#AddMeal .mealcategory #meal #mealprice {
+  font-size: 100%;
+}
+#AddMeal .mealcategory #meal .mealimage {
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+#AddMeal #submitbutton {
+  margin-bottom: 50px;
+  margin-top: 20px;
+  padding: 20px 100px;
+  font-size: 140%;
+}
+#AddMeal #returnbutton {
+  margin-bottom: 30px;
+}
+
+#Order #orderdata {
+  width: 100%;
+}
+#Order #orderdata #summary {
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 0 60px;
+  gap: 20px;
+}
+#Order #orderdata #summary #right #eatingoptions {
+  margin-bottom: 50px;
+}
+#Order #orderdata #summary #right #eatingoptions form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+#Order #orderdata #summary #right #eatingoptions form .selected {
+  background-color: rgb(167, 162, 96);
+  color: white;
+}
+#Order #orderdata #summary #right #newmealbutton > button {
+  margin: 50px 0;
+  padding: 20px 100px;
+  font-size: 140%;
+}
+#Order #orderdata #summary #meals {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  background-color: rgb(22, 20, 20);
+  border-radius: 27px;
+  border: solid 3px rgb(167, 162, 96);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+#Order #orderdata #summary #meals #meal {
+  width: 100%;
+}
+#Order #orderdata #summary #meals #meal:not(:last-child) {
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(55, 49, 47);
+}
+#Order #orderdata #summary #meals #meal p {
+  margin: 0;
+}
+#Order #orderdata #summary #meals #meal #mealdata {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+#Order #orderdata #summary #meals #meal #mealdata #names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#Order #orderdata #summary #meals #meal #mealdata #names #extras #extraname {
+  text-align: left;
+  font-size: 100%;
+}
+#Order #orderdata #summary #meals #meal #mealdata #prices > #extraprice {
+  font-size: 100%;
+}
+#Order #orderdata #summary #meals #meal #mealdata #deletebutton, #Order #orderdata #summary #meals #meal #mealdata #customizebutton {
+  align-self: flex-start;
+  margin: 5px 20px;
+}
+#Order #orderdata #summary #meals #meal #mealdata #customizebutton > button {
+  width: 100%;
+}
+#Order #orderdata #final {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 50px 60px;
+  align-items: end;
+  gap: 20px;
+}
+#Order #orderdata #final #pay {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#Order #orderdata #final #pay p {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 140%;
+}
+#Order #orderdata #final #pay button {
+  padding: 20px 150px;
+  font-size: 140%;
+}
+#Order #pendingorder #pwithhighlight, #Order #ordercomplete #pwithhighlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#Order #pendingorder #pwithhighlight #highlight, #Order #ordercomplete #pwithhighlight #highlight {
+  text-transform: uppercase;
+  color: rgb(167, 162, 96);
+  font-size: 130%;
+}
+#Order #pendingorder #pwithhighlight p, #Order #ordercomplete #pwithhighlight p {
+  margin: 0;
+}
+#Order p {
+  font-size: 130%;
+  margin: 50px 0;
+}
+
+#CustomizeMeal #pwithhighlight {
+  font-size: 130%;
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#CustomizeMeal #pwithhighlight #highlight {
+  text-transform: uppercase;
+  color: rgb(167, 162, 96);
+}
+#CustomizeMeal #extralist {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+#CustomizeMeal #extralist #extra {
+  padding-bottom: 10px;
+}
+#CustomizeMeal #extralist #extra #extraprice {
+  font-size: 100%;
+}
+#CustomizeMeal #extralist #extra .extraimage {
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+#CustomizeMeal #submitbutton {
+  margin-bottom: 50px;
+  margin-top: 20px;
+  padding: 20px 100px;
+  font-size: 140%;
+}
+#CustomizeMeal #returnbutton {
+  margin-bottom: 30px;
+}
+
+#Admin p {
+  font-size: 130%;
+  margin: 50px 0;
+}
+#Admin #pwithhighlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#Admin #pwithhighlight #highlight {
+  font-size: 130%;
+  text-transform: uppercase;
+  color: rgb(167, 162, 96);
+}
+#Admin #orders {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+#Admin #orders table {
+  background-color: rgb(22, 20, 20);
+  border: 2px solid rgb(167, 162, 96);
+}
+#Admin #orders table th, #Admin #orders table td {
+  padding: 10px 20px;
+  border: 1px solid rgb(167, 162, 96);
+}
+#Admin #orders table th {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+#Admin #orders table p {
+  margin: 0;
+  font-size: 100%;
+}
+#Admin #orders table #extra {
+  font-size: 80%;
+}
+#Admin #orders table #extra::before {
+  content: "+ ";
+}
+#Admin #orders table #mealname {
+  margin-top: 6px;
+}
+#Admin #orders table #buttons form:not(:last-child) {
+  margin-bottom: 10px;
+}
+#Admin #monthlystats {
+  margin-bottom: 50px;
+}
+#Admin #monthlystats table {
+  background-color: rgb(22, 20, 20);
+  border: 2px solid rgb(167, 162, 96);
+}
+#Admin #monthlystats table th, #Admin #monthlystats table td {
+  padding: 10px 20px;
+  border: 1px solid rgb(167, 162, 96);
+}
+#Admin #monthlystats table th {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+#Admin #monthlystats table p {
+  margin: 0;
+  font-size: 100%;
+}
+#Admin #meals {
+  margin: 0 50px;
+}
+#Admin #meals #categorylist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+#Admin #meals #categorylist .mealcategory {
+  background-color: rgb(22, 20, 20);
+  border-radius: 25px;
+  border: 2px solid rgb(167, 162, 96);
+}
+#Admin #meals #categorylist .mealcategory #categoryname {
+  margin: 20px;
+  text-transform: uppercase;
+  color: rgb(167, 162, 96);
+}
+#Admin #meals #categorylist .mealcategory #meallist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+#Admin #logoutbutton {
+  margin: 30px;
+}
+
+#AdminManageMeal p {
+  font-size: 130%;
+  margin: 50px 0;
+}
+#AdminManageMeal #pwithhighlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#AdminManageMeal #pwithhighlight #highlight {
+  font-size: 130%;
+  text-transform: uppercase;
+  color: rgb(167, 162, 96);
+}
+#AdminManageMeal #meal {
+  display: flex;
+  gap: 50px;
+}
+#AdminManageMeal #meal form #content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+#AdminManageMeal #meal form #content .mealimage {
+  border-radius: 25px;
+  border: 3px solid rgb(167, 162, 96);
+}
+#AdminManageMeal #meal form #content #formfields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#AdminManageMeal #meal form #content #formfields #formfield {
+  min-width: 300px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  font-size: 110%;
+}
+#AdminManageMeal #meal form #savebutton {
+  margin-bottom: 50px;
+  margin-top: 40px;
+  padding: 20px 100px;
+  font-size: 140%;
+}
+#AdminManageMeal #returnbutton {
+  margin: 30px;
+}/*# sourceMappingURL=style.css.map */

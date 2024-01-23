@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body id="AdminManageMeal">
+    <div id="header">
+        <div class="line"></div>
+        <h1>Admin Panel</h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="pwithhighlight">
+        <p>Managing</p>
+        <span id='highlight' th:text="${Meal.getName()}"></span>
+    </div>
+
+    <div id="meal">
+        
+        <form th:action="@{/adminupdatemeal}" method="POST" th:object="${validator}">
+            <input type="hidden" name="mealId" th:field="*{mealId}">
+            <div th:if="${#fields.hasErrors()}">
+                <span class="validationError">Correct these mistakes and try again</span>
+            </div>    
+            <div id="content">
+                <div class="mealimage" th:style="'background-image: url(' + '/images/meals/' + ${Meal.imagepath} + ')'" th:alt="${Meal.id + '-image'}"></div>
+                <div id="formfields">
+                    <div id="formfield">
+                        <label for="name">Name</label>
+                        <input type="text" th:field="*{mealName}" >
+                        <span class="validationError" th:if="${#fields.hasErrors('mealName')}" th:errors="*{mealName}"></span>
+                    </div>
+                    <div id="formfield">
+                        <label for="name">Price</label>
+                        <input type="text" th:field="*{mealPrice}">
+                        <span class="validationError" th:if="${#fields.hasErrors('mealPrice')}" th:errors="*{mealPrice}"></span>
+                    </div>
+                    <div id="formfield">
+                        <label for="name">Category</label>
+                        <input type="text" th:field="*{mealCategory}" >
+                        <span class="validationError" th:if="${#fields.hasErrors('mealCategory')}" th:errors="*{mealCategory}"></span>
+                    </div>
+                </div>
+            </div>
+       
+            <button type="submit" id="savebutton">Save</button>
+        </form>
+    </div>
+
+    
+
+
+    <a id='returnbutton' th:href="@{'../../admin'}">
+        <button type="button">Return</button>
+    </a>
+</body>
+</html>

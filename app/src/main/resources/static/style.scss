@@ -1,0 +1,649 @@
+$themecolor: rgb(167, 162, 96);
+
+$bc: rgb(55,49,47);
+$bcdark: rgb(22,20,20);
+
+
+
+body {
+    margin: 0;
+    font-family: 'Gill Sans MT';
+    background-color: $bc;
+    background: linear-gradient(-150deg, $bc,$bcdark);
+    background-attachment: fixed;
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1, h2, h3, h4 {
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+    h1 {
+        font-size: 200%;
+    }
+}
+
+.line {
+    border-bottom: 2px solid $themecolor;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+}
+
+
+button {
+    padding: 15px 45px;
+    letter-spacing: 1px;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 100%;
+    outline: none;
+    border: none;
+    transition: 0.2s;
+    border-radius: 8px;
+    box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+    cursor: pointer;
+    color: $bc;
+    &:hover {
+        background-color: $themecolor;
+        color: white;
+    }
+}
+
+input {
+    padding: 8px 16px;
+    outline: none;
+    border: 2px solid $bcdark;
+    background-color: white;
+    border-radius: 8px;
+    transition: 0.2s;
+    color: $bc;
+    font-family: inherit;
+    font-size: 100%;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+    &:focus {
+        border: 2px solid $themecolor;
+    }
+    
+}
+
+#header {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    padding: 30px 0;
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .line {
+        width: 25%;
+        height: 0;
+    }
+    h1 {
+        margin: 0 5%;
+    }
+    #title {
+        display: flex;
+        flex-direction: column;
+        margin: 0 5%;
+        p {
+            font-size: 60%;
+            margin: 0;
+        }
+    }
+}
+
+
+.radiobuttonlabel {
+    display: inline-block;
+    padding: 15px 45px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    color: $bc;
+    border-radius: 5px;
+    transition: 0.2s;
+    box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+
+    input[type="radio"] { 
+        display: none;
+    }
+
+    &:has(input[type="radio"]:checked) {
+        background-color: $themecolor; /* Zmiana koloru tła, gdy zaznaczony */
+        color: white;
+    }
+    &:hover {
+        background-color: $themecolor; /* Zmiana koloru tła, gdy zaznaczony */
+        color: white;
+    }
+    
+}
+
+.radioimagelabel, .mealcategory>#meal, .checkboximagelabel {
+    text-transform: uppercase;
+    padding-top: 10px;
+    border: 2px solid $bcdark;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    color: $bc;
+    border-radius: 5px;
+    transition: 0.2s;
+    box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+
+    .mealimage, .extraimage {
+        border-radius: 0 0 5px 5px;
+        margin-top: 10px;
+    }
+    input[type="radio"], input[type="checkbox"] { 
+        display: none;
+    }
+
+    &:has(input[type="radio"]:checked), &:has(input[type="checkbox"]:checked) {
+        background-color: $themecolor;
+        color: white;
+    }
+    &:hover {
+        background-color: $themecolor;
+        color: white;
+    }
+    
+}
+
+.mealimage, .extraimage {
+    height: 200px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+#Home {
+    #ad {
+        >p {
+            margin: 50px 0;
+        }
+        #meallist {
+            display: flex;
+            gap: 50px;
+            #meal {
+                box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+                background-color: $bcdark;
+                border-radius: 27px;
+                border: solid 3px $themecolor;
+                .mealimage {
+                    border-radius: 25px 25px 0 0;
+                    width: 350px;
+                }
+            #mealdata {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                p {
+                    &#mealprice {
+                        font-size: 100%;
+                    }
+                    margin-block: 0;
+                }
+            }
+            }
+            
+        }
+    }
+    p {
+        font-size: 130%;
+    }
+    #neworder {
+        padding: 30px 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        #neworderbutton {
+            margin: 20px 0;
+            font-size: 140%;
+            padding: 20px 100px;
+        }
+    }
+
+    #loginbutton {
+        margin-top: 100px;
+        margin-bottom: 20px;
+        button {
+            background-color: $bcdark;
+            color: $bc;
+            &:hover {
+                background-color: $themecolor;
+                color: white;
+            }
+        }
+    }
+    
+    #header {
+        padding: 70px 0 0 0;
+    }
+}
+
+#Login {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 60px;
+        align-items: center;
+        #field {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-transform: uppercase;
+            width: 200%;
+        }
+    }
+
+    #returnbutton {
+        margin-top: 30px;
+    }
+}
+
+
+#AddMeal {
+    form {
+        width: 100%;
+        p {
+            font-size: 130%;
+            margin: 50px 0;
+        }
+        #pwithhighlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            #highlight {
+                text-transform: uppercase;
+                color: $themecolor;
+                font-size: 130%;
+            }
+        }
+    }
+
+    #categories {
+       #categorylist {
+            margin: 50px 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+       }
+    }
+
+    .mealcategory {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+        #meal {
+            padding-bottom: 10px;
+            #mealprice {
+                font-size: 100%;
+            }
+            .mealimage {
+                margin-bottom: 10px;
+                border-radius: 0;
+            }
+        }
+    }
+
+    #submitbutton {
+        margin-bottom: 50px;
+        margin-top: 20px;
+        padding: 20px 100px;
+        font-size: 140%;
+    }
+
+    #returnbutton {
+        margin-bottom: 30px;
+    }
+    
+}
+
+#Order {
+    #orderdata {
+        width: 100%;
+        #summary {
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 0 60px;
+            gap: 20px;
+            #right {
+                #eatingoptions {
+                    margin-bottom: 50px;
+                    form {
+                        display: flex;
+                        gap: 20px;
+                        justify-content: center;
+                        .selected {
+                            background-color: $themecolor;
+                            color: white;
+                        }
+                    }
+                }
+                #newmealbutton>button {
+                    margin: 50px 0;
+                    padding: 20px 100px;
+                    font-size: 140%;
+                }
+            }
+            #meals {
+                box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+                background-color: $bcdark;
+                border-radius: 27px;
+                border: solid 3px $themecolor;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 10px;
+                #meal {
+                    &:not(:last-child) {
+                        padding-bottom: 10px;
+                        border-bottom: 2px solid $bc;
+                    }
+                    width: 100%;
+                    p {
+                        margin: 0;
+                    }
+                    #mealdata {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                        align-items: center;
+                        justify-content: center;
+                        #names {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            #extras {
+                                #extraname {
+                                    text-align: left;
+                                    font-size: 100%;
+                                }
+                               
+                            }
+                        }
+                        #prices>#extraprice {
+                            font-size: 100%;
+                        }
+                        #deletebutton, #customizebutton {
+                            align-self: flex-start;
+                            margin: 5px 20px;
+                        }
+                        #customizebutton>button {
+                            width: 100%;
+                        }
+                    }
+                   
+                }
+            }
+        }
+
+        #final {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 50px 60px;
+            align-items: end;
+            gap: 20px;
+            #pay {
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                p {
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-size: 140%;
+                }
+                button {
+                    padding: 20px 150px;
+                    font-size: 140%;
+                }
+            }
+        }
+       
+    }
+    #pendingorder, #ordercomplete {
+        #pwithhighlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            #highlight {
+                text-transform: uppercase;
+                color: $themecolor;
+                font-size: 130%;
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    p {
+        font-size: 130%;
+        margin: 50px 0;
+    }
+}
+
+#CustomizeMeal {
+    #pwithhighlight {
+        font-size: 130%;
+        margin: 50px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        #highlight {
+            text-transform: uppercase;
+            color: $themecolor;
+        }
+    }
+
+    #extralist {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+        #extra {
+            padding-bottom: 10px;
+            #extraprice {
+                font-size: 100%;
+            }
+            .extraimage {
+                margin-bottom: 10px;
+                border-radius: 0;
+            }
+        }
+    }
+
+    #submitbutton {
+        margin-bottom: 50px;
+        margin-top: 20px;
+        padding: 20px 100px;
+        font-size: 140%;
+    }
+
+    #returnbutton {
+        margin-bottom: 30px;
+    }
+    
+}
+
+#Admin {
+    p {
+        font-size: 130%;
+        margin: 50px 0;
+    }
+    #pwithhighlight {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        #highlight {
+            font-size: 130%;
+            text-transform: uppercase;
+            color: $themecolor;
+        }
+    }
+
+    #orders {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 50px;
+        table {
+            background-color: $bcdark;
+            border: 2px solid $themecolor;
+            th, td {
+                padding: 10px 20px;
+                border: 1px solid $themecolor;
+            }
+            th {
+                text-transform: uppercase;
+                font-weight: normal;
+            }
+            p {
+                margin: 0;
+                font-size: 100%;
+            }
+            #extra {
+                &::before {
+                    content: "+ ";
+                }
+                font-size: 80%;
+            }
+            #mealname {
+                margin-top: 6px;
+            }
+
+            #buttons {
+                form:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    #monthlystats {
+        margin-bottom: 50px;
+        table {
+            background-color: $bcdark;
+            border: 2px solid $themecolor;
+            th, td {
+                padding: 10px 20px;
+                border: 1px solid $themecolor;
+            }
+            th {
+                text-transform: uppercase;
+                font-weight: normal;
+            }
+            p {
+                margin: 0;
+                font-size: 100%;
+            }
+        }
+    }
+
+    #meals {
+        margin: 0 50px;
+        #categorylist {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            .mealcategory {
+                background-color: $bcdark;
+                border-radius: 25px;
+                border: 2px solid $themecolor;
+                #categoryname {
+                    margin: 20px;
+                    text-transform: uppercase;
+                    color: $themecolor;
+                }
+                #meallist {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    justify-content: center;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
+    #logoutbutton {
+        margin: 30px;
+    }
+}
+
+#AdminManageMeal {
+    p {
+        font-size: 130%;
+        margin: 50px 0;
+    }
+    #pwithhighlight {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        #highlight {
+            font-size: 130%;
+            text-transform: uppercase;
+            color: $themecolor;
+        }
+    }
+
+    #meal {
+        display: flex;
+        gap: 50px;
+        form {
+            #content {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+                .mealimage {
+                    border-radius: 25px;
+                    border: 3px solid $themecolor;
+                }
+                #formfields {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    #formfield {
+                        min-width: 300px;
+                        display: flex;
+                        gap: 5px;
+                        flex-direction: column;
+                        font-size: 110%;
+                    }
+                }
+            }
+          
+           
+
+            #savebutton {
+                margin-bottom: 50px;
+                margin-top: 40px;
+                padding: 20px 100px;
+                font-size: 140%;
+            }
+        }
+    }
+
+    #returnbutton {
+        margin: 30px;
+    }
+}

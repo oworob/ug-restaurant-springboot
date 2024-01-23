@@ -1,0 +1,925 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- BURGERS -->
+
+  <bean id='beetrootburger' class="app.data.Meal">
+    <constructor-arg name="id" value="beetrootburger"></constructor-arg>
+    <constructor-arg name="name" value="Beetroot Burger"></constructor-arg>
+    <constructor-arg name="category" value="Burger"></constructor-arg>
+    <constructor-arg name="price" value="8.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="beetrootburger.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="bacon"/>
+        <ref bean="lettuce"/>
+        <ref bean="avocado"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="cheese"/>
+        <ref bean="patty"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='baconandcheese' class="app.data.Meal">
+    <constructor-arg name="id" value="baconandcheese"></constructor-arg>
+    <constructor-arg name="name" value="Bacon and Cheese"></constructor-arg>
+    <constructor-arg name="category" value="Burger"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="baconandcheese.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="bacon"/>
+        <ref bean="lettuce"/>
+        <ref bean="avocado"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="cheese"/>
+        <ref bean="patty"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='cheeseburger' class="app.data.Meal">
+    <constructor-arg name="id" value="cheeseburger"></constructor-arg>
+    <constructor-arg name="name" value="Cheeseburger"></constructor-arg>
+    <constructor-arg name="category" value="Burger"></constructor-arg>
+    <constructor-arg name="price" value="7.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="cheeseburger.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="bacon"/>
+        <ref bean="lettuce"/>
+        <ref bean="avocado"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="cheese"/>
+        <ref bean="patty"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='chickenburger' class="app.data.Meal">
+    <constructor-arg name="id" value="chickenburger"></constructor-arg>
+    <constructor-arg name="name" value="Chicken Burger"></constructor-arg>
+    <constructor-arg name="category" value="Burger"></constructor-arg>
+    <constructor-arg name="price" value="6.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="chickenburger.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="bacon"/>
+        <ref bean="lettuce"/>
+        <ref bean="avocado"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="cheese"/>
+        <ref bean="patty"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+
+  <bean id='fishburger' class="app.data.Meal">
+    <constructor-arg name="id" value="fishburger"></constructor-arg>
+    <constructor-arg name="name" value="Fish Burger"></constructor-arg>
+    <constructor-arg name="category" value="Burger"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="fishburger.jpeg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="bacon"/>
+        <ref bean="lettuce"/>
+        <ref bean="avocado"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="cheese"/>
+        <ref bean="patty"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='juicylucy' class="app.data.Meal">
+    <constructor-arg name="id" value="juicylucy"></constructor-arg>
+    <constructor-arg name="name" value="Juicy Lucy"></constructor-arg>
+    <constructor-arg name="category" value="Burger"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="juicylucy.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="bacon"/>
+        <ref bean="lettuce"/>
+        <ref bean="avocado"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="cheese"/>
+        <ref bean="patty"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='veganburger' class="app.data.Meal">
+    <constructor-arg name="id" value="veganburger"></constructor-arg>
+    <constructor-arg name="name" value="Vegan Meat Burger"></constructor-arg>
+    <constructor-arg name="category" value="Burger"></constructor-arg>
+    <constructor-arg name="price" value="8.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="veganburger.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="lettuce"/>
+        <ref bean="avocado"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="cheese"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <!-- PASTAS -->
+
+  <bean id='aglioolio' class="app.data.Meal">
+    <constructor-arg name="id" value="aglioolio"></constructor-arg>
+    <constructor-arg name="name" value="Aglio Olio"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="aglioolio.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='allaputanesca' class="app.data.Meal">
+    <constructor-arg name="id" value="allaputanesca"></constructor-arg>
+    <constructor-arg name="name" value="Alla Putanesca"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="10.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="allaputanesca.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='bolognese' class="app.data.Meal">
+    <constructor-arg name="id" value="bolognese"></constructor-arg>
+    <constructor-arg name="name" value="Bolognese"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="bolognese.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='cacioepepe' class="app.data.Meal">
+    <constructor-arg name="id" value="cacioepepe"></constructor-arg>
+    <constructor-arg name="name" value="Cacio e Pepe"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="10.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="cacioepepe.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='carbonara' class="app.data.Meal">
+    <constructor-arg name="id" value="carbonara"></constructor-arg>
+    <constructor-arg name="name" value="Carbonara"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="12.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="carbonara.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='chickenalfredo' class="app.data.Meal">
+    <constructor-arg name="id" value="chickenalfredo"></constructor-arg>
+    <constructor-arg name="name" value="Chicken Alfredo"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="14.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="chickenalfredo.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='macncheese' class="app.data.Meal">
+    <constructor-arg name="id" value="macncheese"></constructor-arg>
+    <constructor-arg name="name" value="Mac 'n' Cheese"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="8.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="macncheese.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='ravioli' class="app.data.Meal">
+    <constructor-arg name="id" value="ravioli"></constructor-arg>
+    <constructor-arg name="name" value="Ravioli"></constructor-arg>
+    <constructor-arg name="category" value="Pasta"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="ravioli.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="basil"/>
+        <ref bean="cheese"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <!-- SANDWICHES -->
+
+    <bean id='bahnmi' class="app.data.Meal">
+    <constructor-arg name="id" value="bahnmi"></constructor-arg>
+    <constructor-arg name="name" value="Bahn Mi"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="7.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="bahnmi.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="bacon"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='bbqpulledpork' class="app.data.Meal">
+    <constructor-arg name="id" value="bbqpulledpork"></constructor-arg>
+    <constructor-arg name="name" value="BBQ Pulled Pork"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="8.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="bbqpulledpork.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="bacon"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='blt' class="app.data.Meal">
+    <constructor-arg name="id" value="blt"></constructor-arg>
+    <constructor-arg name="name" value="BLT"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="6.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="blt.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="bacon"/>
+        <ref bean="garlic"/>
+        <ref bean="avocado"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='clubsandwich' class="app.data.Meal">
+    <constructor-arg name="id" value="clubsandwich"></constructor-arg>
+    <constructor-arg name="name" value="Club Sandwich"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="clubsandwich.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="bacon"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='grilledcheese' class="app.data.Meal">
+    <constructor-arg name="id" value="grilledcheese"></constructor-arg>
+    <constructor-arg name="name" value="Grilled Cheese"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="5.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="grilledcheese.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="bacon"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='hamandcheese' class="app.data.Meal">
+    <constructor-arg name="id" value="hamandcheese"></constructor-arg>
+    <constructor-arg name="name" value="Ham and Cheese"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="7.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="hamandcheese.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="bacon"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='mozzarellameatballsub' class="app.data.Meal">
+    <constructor-arg name="id" value="mozzarellameatballsub"></constructor-arg>
+    <constructor-arg name="name" value="Mozzarella Meatball Sub"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="8.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="mozzarellameatballsub.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="bacon"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='veggieblt' class="app.data.Meal">
+    <constructor-arg name="id" value="veggieblt"></constructor-arg>
+    <constructor-arg name="name" value="Veggie BLT"></constructor-arg>
+    <constructor-arg name="category" value="Sandwich"></constructor-arg>
+    <constructor-arg name="price" value="6.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="veggieblt.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="tomato"/>
+        <ref bean="avocado"/>
+        <ref bean="pinenuts"/>
+        <ref bean="wallnuts"/>
+        <ref bean="garlic"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <!-- PIZZAS -->
+
+  <bean id='californiastylepizza' class="app.data.Meal">
+    <constructor-arg name="id" value="californiastylepizza"></constructor-arg>
+    <constructor-arg name="name" value="California Style Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="12.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="californiastylepizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='chicagostylepizza' class="app.data.Meal">
+    <constructor-arg name="id" value="chicagostylepizza"></constructor-arg>
+    <constructor-arg name="name" value="Chicago Style Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="14.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="chicagostylepizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+         <ref bean="cheese"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='detroitstylepizza' class="app.data.Meal">
+    <constructor-arg name="id" value="detroitstylepizza"></constructor-arg>
+    <constructor-arg name="name" value="Detroit Style Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="13.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="detroitstylepizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="pepperoni"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='greekstylepizza' class="app.data.Meal">
+    <constructor-arg name="id" value="greekstylepizza"></constructor-arg>
+    <constructor-arg name="name" value="Greek Style Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="greekstylepizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='neapolitanpizza' class="app.data.Meal">
+    <constructor-arg name="id" value="neapolitanpizza"></constructor-arg>
+    <constructor-arg name="name" value="Neapolitan Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="10.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="neapolitanpizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="tomato"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='newyorkstylepizza' class="app.data.Meal">
+    <constructor-arg name="id" value="newyorkstylepizza"></constructor-arg>
+    <constructor-arg name="name" value="New York Style Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="newyorkstylepizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="pepperoni"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='sicilianstylepizza' class="app.data.Meal">
+    <constructor-arg name="id" value="sicilianstylepizza"></constructor-arg>
+    <constructor-arg name="name" value="Sicilian Style Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="12.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="sicilianstylepizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="sausage"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='stlouisstylepizza' class="app.data.Meal">
+    <constructor-arg name="id" value="stlouisstylepizza"></constructor-arg>
+    <constructor-arg name="name" value="St. Louis Style Pizza"></constructor-arg>
+    <constructor-arg name="category" value="Pizza"></constructor-arg>
+    <constructor-arg name="price" value="13.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="stlouisstylepizza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="bacon"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <!-- GNOCCHI -->
+
+  <bean id='canederli' class="app.data.Meal">
+    <constructor-arg name="id" value="canederli"></constructor-arg>
+    <constructor-arg name="name" value="Canederli"></constructor-arg>
+    <constructor-arg name="category" value="Gnocchi"></constructor-arg>
+    <constructor-arg name="price" value="10.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="canederli.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="garlic"/>
+        <ref bean="tomato"/>
+        <ref bean="lettuce"/>
+        <ref bean="sausage"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='classicpotatognocchi' class="app.data.Meal">
+    <constructor-arg name="id" value="classicpotatognocchi"></constructor-arg>
+    <constructor-arg name="name" value="Classic Potato Gnocchi"></constructor-arg>
+    <constructor-arg name="category" value="Gnocchi"></constructor-arg>
+    <constructor-arg name="price" value="12.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="classicpotatognocchi.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="garlic"/>
+        <ref bean="tomato"/>
+        <ref bean="lettuce"/>
+        <ref bean="sausage"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='gnocchiallaromana' class="app.data.Meal">
+    <constructor-arg name="id" value="gnocchiallaromana"></constructor-arg>
+    <constructor-arg name="name" value="Gnocchi alla Romana"></constructor-arg>
+    <constructor-arg name="category" value="Gnocchi"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="gnocchiallaromana.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="garlic"/>
+        <ref bean="tomato"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='gorgonzollagnocchi' class="app.data.Meal">
+    <constructor-arg name="id" value="gorgonzollagnocchi"></constructor-arg>
+    <constructor-arg name="name" value="Gorgonzolla Gnocchi"></constructor-arg>
+    <constructor-arg name="category" value="Gnocchi"></constructor-arg>
+    <constructor-arg name="price" value="13.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="gorgonzollagnocchi.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="garlic"/>
+        <ref bean="tomato"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='pumpkingnocchi' class="app.data.Meal">
+    <constructor-arg name="id" value="pumpkingnocchi"></constructor-arg>
+    <constructor-arg name="name" value="Pumpkin Gnocchi"></constructor-arg>
+    <constructor-arg name="category" value="Gnocchi"></constructor-arg>
+    <constructor-arg name="price" value="14.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="pumpkingnocchi.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="garlic"/>
+        <ref bean="tomato"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="sausage"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='ricottagnocchi' class="app.data.Meal">
+    <constructor-arg name="id" value="ricottagnocchi"></constructor-arg>
+    <constructor-arg name="name" value="Ricotta Gnocchi"></constructor-arg>
+    <constructor-arg name="category" value="Gnocchi"></constructor-arg>
+    <constructor-arg name="price" value="12.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="ricottagnocchi.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="garlic"/>
+        <ref bean="tomato"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='spinachgnocchi' class="app.data.Meal">
+    <constructor-arg name="id" value="spinachgnocchi"></constructor-arg>
+    <constructor-arg name="name" value="Spinach Gnocchi"></constructor-arg>
+    <constructor-arg name="category" value="Gnocchi"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="spinachgnocchi.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="garlic"/>
+        <ref bean="tomato"/>
+        <ref bean="lettuce"/>
+        <ref bean="onion"/>
+        <ref bean="avocado"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <!-- DUMPLINGS -->
+
+  <bean id='dimsum' class="app.data.Meal">
+    <constructor-arg name="id" value="dimsum"></constructor-arg>
+    <constructor-arg name="name" value="Dim Sum"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="dimsum.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+        <ref bean="avocado"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='empenada' class="app.data.Meal">
+    <constructor-arg name="id" value="empenada"></constructor-arg>
+    <constructor-arg name="name" value="Empenada"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="10.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="empenada.jpeg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+        <ref bean="avocado"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='gyoza' class="app.data.Meal">
+    <constructor-arg name="id" value="gyoza"></constructor-arg>
+    <constructor-arg name="name" value="Gyoza"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="gyoza.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+        <ref bean="avocado"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='knedle' class="app.data.Meal">
+    <constructor-arg name="id" value="knedle"></constructor-arg>
+    <constructor-arg name="name" value="Knedle"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="knedle.jpeg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="sausage"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='pelmeni' class="app.data.Meal">
+    <constructor-arg name="id" value="pelmeni"></constructor-arg>
+    <constructor-arg name="name" value="Pelmeni"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="10.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="pelmeni.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="basil"/>
+        <ref bean="avocado"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='pierogi' class="app.data.Meal">
+    <constructor-arg name="id" value="pierogi"></constructor-arg>
+    <constructor-arg name="name" value="Pierogi"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="pierogi.jpeg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="sausage"/>
+        <ref bean="bacon"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='samosa' class="app.data.Meal">
+    <constructor-arg name="id" value="samosa"></constructor-arg>
+    <constructor-arg name="name" value="Samosa"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="10.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="samosa.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="onion"/>
+        <ref bean="sausage"/>
+        <ref bean="bacon"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='wonton' class="app.data.Meal">
+    <constructor-arg name="id" value="wonton"></constructor-arg>
+    <constructor-arg name="name" value="Won Ton"></constructor-arg>
+    <constructor-arg name="category" value="Dumplings"></constructor-arg>
+    <constructor-arg name="price" value="11.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="wonton.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="cheese"/>
+        <ref bean="bacon"/>
+        <ref bean="onion"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <!-- DESSERTS -->
+
+  <bean id='biscuits' class="app.data.Meal">
+    <constructor-arg name="id" value="biscuits"></constructor-arg>
+    <constructor-arg name="name" value="Biscuits"></constructor-arg>
+    <constructor-arg name="category" value="Desserts"></constructor-arg>
+    <constructor-arg name="price" value="7.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="biscuits.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="wallnuts"/>
+        <ref bean="pinenuts"/>
+        <ref bean="chocolate"/>
+        <ref bean="strawberries"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='cheesecake' class="app.data.Meal">
+    <constructor-arg name="id" value="cheesecake"></constructor-arg>
+    <constructor-arg name="name" value="Cheesecake"></constructor-arg>
+    <constructor-arg name="category" value="Desserts"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="cheesecake.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="wallnuts"/>
+        <ref bean="pinenuts"/>
+        <ref bean="chocolate"/>
+        <ref bean="strawberries"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='vanillacustard' class="app.data.Meal">
+    <constructor-arg name="id" value="vanillacustard"></constructor-arg>
+    <constructor-arg name="name" value="Vanilla Custard"></constructor-arg>
+    <constructor-arg name="category" value="Desserts"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="vanillacustard.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="wallnuts"/>
+        <ref bean="pinenuts"/>
+        <ref bean="chocolate"/>
+        <ref bean="strawberries"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='icecream' class="app.data.Meal">
+    <constructor-arg name="id" value="icecream"></constructor-arg>
+    <constructor-arg name="name" value="Ice Cream"></constructor-arg>
+    <constructor-arg name="category" value="Desserts"></constructor-arg>
+    <constructor-arg name="price" value="6.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="icecream.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="wallnuts"/>
+        <ref bean="pinenuts"/>
+        <ref bean="chocolate"/>
+        <ref bean="strawberries"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='macaroons' class="app.data.Meal">
+    <constructor-arg name="id" value="macaroons"></constructor-arg>
+    <constructor-arg name="name" value="Macaroons"></constructor-arg>
+    <constructor-arg name="category" value="Desserts"></constructor-arg>
+    <constructor-arg name="price" value="9.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="macaroons.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="wallnuts"/>
+        <ref bean="pinenuts"/>
+        <ref bean="chocolate"/>
+        <ref bean="strawberries"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+  <bean id='chocolatepudding' class="app.data.Meal">
+    <constructor-arg name="id" value="chocolatepudding"></constructor-arg>
+    <constructor-arg name="name" value="Chocolate Pudding"></constructor-arg>
+    <constructor-arg name="category" value="Desserts"></constructor-arg>
+    <constructor-arg name="price" value="7.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="chocolatepudding.jpg"></constructor-arg>
+    <constructor-arg name="availableExtras">
+      <array>
+        <ref bean="wallnuts"/>
+        <ref bean="pinenuts"/>
+        <ref bean="chocolate"/>
+        <ref bean="strawberries"/>
+      </array>
+    </constructor-arg>
+  </bean>
+
+
+
+</beans>

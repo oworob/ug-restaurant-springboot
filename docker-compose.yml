@@ -1,0 +1,19 @@
+version: "3.8"
+name: springproject
+
+services:
+  db:
+    image: mongo:latest
+    container_name: springboot-restaurant-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db/data/db:/db/data
+
+  server:
+    build: app
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on: 
+      - db

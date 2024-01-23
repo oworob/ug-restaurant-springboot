@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body id="Admin">
+    <div id="header">
+        <div class="line"></div>
+        <h1>Admin Panel</h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="pwithhighlight">
+        <p>Total predicted income: </p>
+        <span id='highlight' th:text="${TotalIncome} + '$'"></span>
+    </div>
+
+    <div id="orders">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Income</th>
+                    <th>Eating Option</th>
+                    <th>Order</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="order : ${Orders}">
+                    <td th:text="${order.id}"></td>
+                    <td th:text="${#temporals.format(order.orderDate, 'dd-MM-yyyy')}"></td>
+                    <td th:text="${order.status}"></td>
+                    <td th:text="${order.CalculateTotalPrice()} + '$'"></td>
+                    <td th:switch="${order.eatingOption}">
+                        <span th:case="'EatIn'">Eat In</span>
+                        <span th:case="'TakeAway'">Take Away</span>
+                        <span th:case="*" th:text="'Unknown - '+${order.eatingOption}"></span>
+                    </p>
+                    <td>
+                        <div th:each="meal : ${order.meals}">
+                            <p th:text="${meal.getMeal().name}" id="mealname"></p>
+                            <div id="mealextras">
+                                <p th:each="extra : ${meal.getExtras()}" th:text="${extra.name}" id="extra"></p>
+                            </div>
+                            
+                        </div>
+                    </td>
+                    <td id="buttons">
+                        <form action="/completeorder" method="POST" th:if="${order.getStatus().toString() == 'PENDING'}">
+                            <input type="hidden" name="orderId" th:value="${order.getId()}">
+                            <button>Complete</button>
+                        </form>
+                        <form action="/cancelorder" method="POST" th:if="${order.getStatus().toString() == 'PENDING'}">
+                            <input type="hidden" name="orderId" th:value="${order.getId()}">
+                            <button>Cancel</button>
+                        </form>
+                        <form action="/deleteorder" method="POST">
+                            <input type="hidden" name="orderId" th:value="${order.getId()}">
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="monthlystats">
+        <div id="pwithhighlight">
+            <p>Here are the statistics from </p>
+            <span id='highlight' th:text="${T(java.time.Month).values()[T(java.time.LocalDate).now().getMonthValue() - 1].getDisplayName(T(java.time.format.TextStyle).FULL, T(java.util.Locale).ENGLISH)}"></span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Completed Orders</th>
+                    <th>Income</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="stats : ${MonthlyStatistics}">
+                <td th:text="${#temporals.format(stats.key, 'dd-MM-yyyy')}"></td>
+                <td th:text="${stats.value.count}"></td>
+                <td th:text="${stats.value.income}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="meals">
+        <p>Meal Manager</p>
+        <div id="categorylist">
+            <div th:id='${category.key}' th:each="category : ${MealsByCategory}" class="mealcategory">
+                <p id='categoryname' th:text="${category.key}"></p>
+                <div class="line"></div>
+                <div id="meallist">
+                    <a id='meal' th:each="meal : ${category.value}" th:href="@{'/admin/managemeal/' + ${meal.getId()} }">
+                        <button id="mealname" th:text="${meal.name}"></button>
+                        <!-- <div class="mealimage" th:style="'background-image: url(' + '/images/meals/' + ${meal.imagepath} + ')'" th:alt="${meal.id + '-image'}"></div> -->
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <form id="logoutbutton" action="/logout" method="POST">
+        <button>Log out</button>
+    </form>
+</body>
+</html>

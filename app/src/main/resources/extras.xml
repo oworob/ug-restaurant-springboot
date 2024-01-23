@@ -1,0 +1,119 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id='cheese' class="app.data.Extra">
+    <constructor-arg name="id" value="cheese"></constructor-arg>
+    <constructor-arg name="name" value="Extra Cheese"></constructor-arg>
+    <constructor-arg name="price" value="0.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="cheese.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='lettuce' class="app.data.Extra">
+    <constructor-arg name="id" value="lettuce"></constructor-arg>
+    <constructor-arg name="name" value="Extra Lettuce"></constructor-arg>
+    <constructor-arg name="price" value="0.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="lettuce.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='onion' class="app.data.Extra">
+    <constructor-arg name="id" value="onion"></constructor-arg>
+    <constructor-arg name="name" value="Extra Onion"></constructor-arg>
+    <constructor-arg name="price" value="1.29"></constructor-arg>
+    <constructor-arg name="imagepath" value="onion.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='tomato' class="app.data.Extra">
+    <constructor-arg name="id" value="tomato"></constructor-arg>
+    <constructor-arg name="name" value="Extra Tomato"></constructor-arg>
+    <constructor-arg name="price" value="1.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="tomato.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='bacon' class="app.data.Extra">
+    <constructor-arg name="id" value="bacon"></constructor-arg>
+    <constructor-arg name="name" value="Extra Bacon"></constructor-arg>
+    <constructor-arg name="price" value="3.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="bacon.jpg"></constructor-arg>
+  </bean>
+
+
+  <bean id='avocado' class="app.data.Extra">
+    <constructor-arg name="id" value="avocado"></constructor-arg>
+    <constructor-arg name="name" value="Extra Avocado"></constructor-arg>
+    <constructor-arg name="price" value="2.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="avocado.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='patty' class="app.data.Extra">
+    <constructor-arg name="id" value="patty"></constructor-arg>
+    <constructor-arg name="name" value="Extra Patty"></constructor-arg>
+    <constructor-arg name="price" value="4.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="patty.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='basil' class="app.data.Extra">
+    <constructor-arg name="id" value="basil"></constructor-arg>
+    <constructor-arg name="name" value="Extra Basil"></constructor-arg>
+    <constructor-arg name="price" value="1.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="basil.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='pinenuts' class="app.data.Extra">
+    <constructor-arg name="id" value="pinenuts"></constructor-arg>
+    <constructor-arg name="name" value="Extra Pine Nuts"></constructor-arg>
+    <constructor-arg name="price" value="1.69"></constructor-arg>
+    <constructor-arg name="imagepath" value="pinenuts.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='wallnuts' class="app.data.Extra">
+    <constructor-arg name="id" value="wallnuts"></constructor-arg>
+    <constructor-arg name="name" value="Extra Wallnuts"></constructor-arg>
+    <constructor-arg name="price" value="1.39"></constructor-arg>
+    <constructor-arg name="imagepath" value="wallnuts.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='garlic' class="app.data.Extra">
+    <constructor-arg name="id" value="garlic"></constructor-arg>
+    <constructor-arg name="name" value="Extra Garlic"></constructor-arg>
+    <constructor-arg name="price" value="1.99"></constructor-arg>
+    <constructor-arg name="imagepath" value="garlic.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='pepperoni' class="app.data.Extra">
+    <constructor-arg name="id" value="pepperoni"></constructor-arg>
+    <constructor-arg name="name" value="Extra Pepperoni"></constructor-arg>
+    <constructor-arg name="price" value="2.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="pepperoni.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='sausage' class="app.data.Extra">
+    <constructor-arg name="id" value="sausage"></constructor-arg>
+    <constructor-arg name="name" value="Extra Sausage"></constructor-arg>
+    <constructor-arg name="price" value="2.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="sausage.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='chicken' class="app.data.Extra">
+    <constructor-arg name="id" value="chicken"></constructor-arg>
+    <constructor-arg name="name" value="Extra Chicken"></constructor-arg>
+    <constructor-arg name="price" value="3.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="chicken.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='chocolate' class="app.data.Extra">
+    <constructor-arg name="id" value="chocolate"></constructor-arg>
+    <constructor-arg name="name" value="Extra Chocolate"></constructor-arg>
+    <constructor-arg name="price" value="2.29"></constructor-arg>
+    <constructor-arg name="imagepath" value="chocolate.jpg"></constructor-arg>
+  </bean>
+
+  <bean id='strawberries' class="app.data.Extra">
+    <constructor-arg name="id" value="strawberries"></constructor-arg>
+    <constructor-arg name="name" value="Extra Strawberries"></constructor-arg>
+    <constructor-arg name="price" value="4.49"></constructor-arg>
+    <constructor-arg name="imagepath" value="strawberries.jpg"></constructor-arg>
+  </bean>
+
+
+</beans>

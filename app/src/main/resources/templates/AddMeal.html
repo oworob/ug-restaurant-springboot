@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Meal</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script th:src="@{/js/AddMeal.js}" type="text/javascript" defer></script>
+
+</head>
+
+
+<body id="AddMeal">
+    <div id="header">
+        <div class="line"></div>
+        <div id="title">
+            <h1>Order</h1>
+            <p th:text="'ID: '+${Order.getId()}"></p>
+        </div>
+        <div class="line"></div>
+    </div>
+
+    <div class="line"></div>
+
+    <form action="/addmeal" method="POST">
+        <input type="hidden" name="orderId" th:value="${Order.getId()}" />
+
+        <div id="categories">
+            <p>What would you like to order?</p>
+            <div id="categorylist">
+                <label th:each="category : ${MealCategories}" class="radioimagelabel" th:id="${category}">
+                    <input type='radio' th:name="category" th:value="${category}" v-model="currentcategory">
+                    <span th:text="${category}"></span>
+                    <div class="mealimage" th:style="'background-image: url(/images/meals/' + ${MealsByCategory.get(category)[0].imagepath} + ')'"></div>
+                </label>
+            </div>
+        </div>
+
+        <div class="line" v-if="currentcategory!=null"></div>
+
+        <div id="meals">
+            <div id="pwithhighlight" v-if="currentcategory">
+                <p>Here are our meals from category</p>
+                <span id='highlight'>{{ currentcategory }}</span>
+            </div>
+            <div th:id='${category.key}' th:each="category : ${MealsByCategory}" class="mealcategory" style="display: none;">
+                <label id='meal' th:each="meal : ${category.value}">
+                    <input type='radio' th:name="mealId" th:value="${meal.getId()}" v-model="currentmeal">
+                    <span id="mealname" th:text="${meal.name}"></span>
+                    <div class="mealimage" th:style="'background-image: url(' + '/images/meals/' + ${meal.imagepath} + ')'" th:alt="${meal.id + '-image'}"></div>
+                    <span id="mealprice" th:text="${meal.price}+'$'"></span>
+                </label>
+            </div>
+        </div>
+
+        <button id='submitbutton' type="submit" v-if="currentmeal!=null">Add Meal</button>
+    </form>
+
+    <a id='returnbutton' th:href="@{'/order/'+${Order.getId()}+'/summary'}">
+        <button type="button">Return</button>
+    </a>
+
+
+</body>
+</html>

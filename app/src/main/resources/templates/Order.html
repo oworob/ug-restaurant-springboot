@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+
+</head>
+<body id="Order">
+    <div id="header">
+        <div class="line"></div>
+        <div id="title">
+            <h1>Order</h1>
+            <p th:text="'ID: '+${Order.getId()}"></p>
+        </div>
+        
+        <div class="line"></div>
+    </div>
+
+    <div class="line"></div>
+
+    
+    <div id="orderdata">
+        <p th:switch="${Order.getStatus().toString()}">
+            Order status: 
+            <span th:case="'IN_PROGRESS'">In progress</span>
+            <span th:case="'COMPLETED'">Completed</span>
+            <span th:case="'PENDING'">Pending</span>
+            <span th:case="'CANCELLED'">Cancelled</span>
+            <span th:case="*" th:text="'Unknown - '+${Order.getStatus()}"></span>
+        </p>
+
+
+
+
+        <div id="summary" th:if="${Order.getStatus().toString() == 'IN_PROGRESS'}">
+            
+            <div id="meals">
+                <form id='meal' th:each="meal: ${Order.getMeals()}" action="/deletemeal" method="POST">
+                    <input type="hidden" name="orderId" th:value="${Order.getId()}">
+                    <input type="hidden" name="mealId" th:value="${meal.getId()}">
+                    <div id="mealdata">
+                        <div id="names">
+                            <p id="mealname" th:text="${meal.getMeal().getName()}"></p>
+                            <div id="extras">
+                                <p id='extraname' th:each="extra : ${meal.getExtras()}" th:text="'+ '+${extra.getName()}">
+                            </div>
+                        </div>
+                        <div id="prices">
+                            <p id="mealprice" th:text="${meal.getMeal().getPrice()}+'$'"></p>
+                            <p id='extraprice' th:each="extra : ${meal.getExtras()}" th:text="${extra.getPrice()+'$'}"></p>
+                        </div>
+                        
+                        <a id='customizebutton' th:href="@{'/order/'+${Order.getId()}+'/customize/'+ ${meal.getId()}}">
+                            <button type="button">Customize</button>
+                        </a>
+                        <button id="deletebutton" type="submit">Delete</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="right">
+                <div id="eatingoptions">
+                    <p>How would you like to eat your food?</p>
+                    <form action="/updateeatingoption" method="POST">
+                        <input type="hidden" name="orderId" th:value="${Order.getId()}" />
+                        <button type="submit" name="eatingOption" value="EatIn" th:class="${Order.eatingOption == 'EatIn'} ? 'selected'">Eat in</button>
+                        <button type="submit" name="eatingOption" value="TakeAway" th:class="${Order.eatingOption == 'TakeAway'} ? 'selected'">Take away</button>
+                    </form>
+                </div>
+                <div class="line"></div>
+                <a id='newmealbutton'th:href="@{'/order/'+${Order.getId()}+'/addmeal'}">
+                    <button type="button">Add New Meal</button>
+                </a>
+            </div>
+            
+        </div>
+
+        <div class="line"></div>
+
+        <div id="final" th:if="${Order.getStatus().toString() == 'IN_PROGRESS'}">
+            <div id="pay" th:if="${Order.CalculateTotalPrice() > 0}">
+                <p th:text="'Total: ' + ${Order.CalculateTotalPrice()} + '$'"></p>
+
+                <form id='payfororder' action="/payfororder" method="POST">
+                    <input type="hidden" name="orderId" th:value="${Order.getId()}">
+                    <button type="submit">Pay</button>
+                </form>
+                
+            </div>
+            <form id='deleteorder' action="/deleteorderclient" method="POST">
+                <input type="hidden" name="orderId" th:value="${Order.getId()}">
+                <button type="submit">Delete Order</button>
+            </div>
+        </div>
+
+        <div th:if="${Order.getStatus().toString().equals('PENDING')}">
+            <div th:replace="~{OrderPending :: #pendingorder}"></div>
+        </div>
+
+        <div th:if="${Order.getStatus().toString().equals('COMPLETED')}">
+            <div th:replace="~{OrderComplete :: #ordercomplete}"></div>
+        </div>
+
+        <div th:if="${Order.getStatus().toString().equals('CANCELLED')}">
+            <div th:replace="~{OrderCancelled :: #ordercancelled}"></div>
+        </div>
+        
+        
+    </div>
+  
+
+
+
+</body>
+</html>
