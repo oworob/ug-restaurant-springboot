@@ -16,3 +16,22 @@ The app has an admin panel that, upon logging in, displays total predicted incom
 
 The app loads initial data (meals and extras) as Beans from an XML file.
 
+### Instructions:
+
+The entire app works in Docker. Simply navigate to the main project folder and run:
+
+`docker compose up --build`
+
+Please note that the first launch may take a while.
+
+### Screenshots:
+
+![home page](https://github.com/oworob/ug-restaurant-springboot/blob/main/screenshots/home.png)
+
+![meals](https://github.com/oworob/ug-restaurant-springboot/blob/main/screenshots/meals.png)
+
+![extras](https://github.com/oworob/ug-restaurant-springboot/blob/main/screenshots/extras.png)
+
+![order](https://github.com/oworob/ug-restaurant-springboot/blob/main/screenshots/order.png)
+
+![admin](https://github.com/oworob/ug-restaurant-springboot/blob/main/screenshots/admin.png)
