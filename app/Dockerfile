@@ -1,9 +1,9 @@
-FROM openjdk:17 AS builder
+FROM maven:3.8.4 AS builder
 
 WORKDIR /app
 
 COPY . .
 
-RUN ./mvnw clean install
+RUN mvn clean install
 
 ENTRYPOINT ["java", "-jar", "target/app-1.jar"]
